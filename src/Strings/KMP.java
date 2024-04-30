@@ -1,11 +1,13 @@
 package Strings;
 
+import java.util.Base64;
+
 public class KMP {
     static int[] lcs;
 
     public static void main(String[] args) {
-        String text = "jagadesh siddhartha siddu";
-        String pattern = "sid";
+        String text = "ABABDABACDAABCCCBABABCABAB";
+        String pattern = "AABAACAABAA";
         findWithKMP(text, pattern);
     }
 
@@ -13,6 +15,9 @@ public class KMP {
         lcs = new int[pattern.length()];
 
         fillLCS(pattern);
+        for(int i : lcs)
+            System.out.print(i + " ");
+        System.out.print("\n");
 
         int i = 0, j = 0;
         int n = text.length(), m = pattern.length();
@@ -31,7 +36,6 @@ public class KMP {
                     j = lcs[j-1];
                 else
                     i ++;
-
             }
         }
     }
@@ -50,7 +54,7 @@ public class KMP {
                 lcs[i] = 0;
                 i++;
               } else {
-                  lcs[i] = lcs[i-1];
+                  len = lcs[len-1];
               }
             }
         }

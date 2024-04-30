@@ -1,0 +1,3882 @@
+{
+  "version": 2,
+  "preAuthSteps": [
+    {
+      "header": "<div class='step-header-main'>Setup BigCommerce Integration</div><div class='step-header-sub'>Refer to our <a tabindex=\"-1\" href=\"https://docs.sarasanalytics.com/integrations/data-sources/source/bigcommerce\"target='_blank'>documentation</a> for setup instructions</div><div class='step-header-sub-2'>Fill in the below details to establish connection between BigCommerce and Warehouse for data replication</div>",
+      "type": "STATIC",
+      "attributes": [
+        {
+          "label": "Integration Name",
+          "name": "integrationName",
+          "type": "TEXT",
+          "required": true,
+          "maxLength": 50,
+          "value": "",
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "Enter the integration name. Daton will use this name to create tables in the warehouse. Once selected, this name cannot be changed.",
+          "description": ""
+        },
+        {
+          "label": "Frequency",
+          "name": "frequency",
+          "type": "INTEGER",
+          "required": true,
+          "maxLength": 50,
+          "value": "2",
+          "min": 1,
+          "max": 24,
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "Select the frequency in hours with which you'd like Daton to pull data from this source.",
+          "description": "Hours"
+        },
+        {
+          "label": "History",
+          "name": "history",
+          "type": "INTEGER",
+          "required": true,
+          "maxLength": 50,
+          "value": "1",
+          "min": 0,
+          "max": 10,
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "Select the number of years of historical data you'd like Daton to pull into your data warehouse.",
+          "description": "Years"
+        }
+      ]
+    },
+    {
+      "header": "<div class='step-header-main'>Enter Store Details</div><div class='step-header-sub'>Refer to our <a tabindex=\"-1\" href=\"https://docs.sarasanalytics.com/integrations/data-sources/source/bigcommerce\"target='_blank'>documentation</a> for setup instructions</div>",
+      "type": "STATIC",
+      "attributes": [
+        {
+          "label": "Store Hash",
+          "name": "storeHash",
+          "type": "TEXT",
+          "required": true,
+          "maxLength": 100,
+          "value": "",
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "",
+          "description": "<div class='attributes-description'>e.g <b>storehash</b>, if your BigCommerce API path is ex: https://api.bigcommerce.com/stores/<b>storehash</b>/v3/ </div>"
+        },
+        {
+          "label": "Client ID",
+          "name": "clientId",
+          "type": "TEXT",
+          "required": true,
+          "maxLength": 100,
+          "value": "",
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "",
+          "description": "<div class='attributes-description'>Please enter the Client ID associated with the store key that was generated.</div>"
+        },
+        {
+          "label": "Access Token",
+          "name": "accessToken",
+          "type": "TEXT",
+          "required": true,
+          "maxLength": 100,
+          "value": "",
+          "possibleValues": [
+
+          ],
+          "autoCompleteUrl": "",
+          "help": "",
+          "description": "<div class='attributes-description'>Please enter the access token associated with the store key that was generated.</div>"
+        }
+      ]
+    }
+  ],
+  "postAuthSteps": [
+    {
+      "header": "<div class='step-header-main'>Configure BigCommerce Tables</div><div class='step-header-sub'>Refer to our <a tabindex=\"-1\" href=\"https://docs.sarasanalytics.com/integrations/data-sources/source/bigcommerce\"target='_blank'>documentation</a> for setup instructions</div>",
+      "type": "DYNAMIC"
+    },
+    {
+      "header": "<div class='step-header-main'>Configure BigCommerce Fields</div><div class='step-header-sub'>Refer to our <a tabindex=\"-1\" href=\"https://docs.sarasanalytics.com/integrations/data-sources/source/bigcommerce\"target='_blank'>documentation</a> for setup instructions</div>",
+      "type": "DYNAMIC"
+    }
+  ],
+  "extraConfig": {
+    "tables": [
+      {
+        "name": "catalog",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "product_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "sku",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "sku_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "price",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "calculated_price",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "sale_price",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "retail_price",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "map_price",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "calculated_weight",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "width",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "height",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "depth",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_free_shipping",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "fixed_cost_shipping_price",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "purchasing_disabled",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "purchasing_disabled_message",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "image_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "cost_price",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "upc",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "mpn",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "gtin",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "inventory_level",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "inventory_warning_level",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "bin_picking_number",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "option_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "id",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "label",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "option_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "option_display_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "brands",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "page_title",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_description",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "image_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "search_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "custom_url",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "is_customized",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "categories",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "parent_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "description",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "views",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "sort_order",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "page_title",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_description",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "layout_file",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "image_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_visible",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "search_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "default_product_sort",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "custom_url",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "is_customized",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "products",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "parent_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "description",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "views",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "sort_order",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "page_title",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "meta_description",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "layout_file",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "image_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_visible",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "search_keywords",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "default_product_sort",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "custom_url",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "is_customized",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "storecurrency",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_default",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "last_updated",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "country_iso2",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "currency_code",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "currency_exchange_rate",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "token",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "auto_update",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "token_location",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "decimal_token",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "thousands_token",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "decimal_places",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "enabled",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "orders",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_created",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_modified",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_shipped",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "status_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "subtotal_ex_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "subtotal_inc_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "subtotal_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "base_shipping_cost",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_cost_ex_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_cost_inc_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_cost_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_cost_tax_class_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "base_handling_cost",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "handling_cost_ex_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "handling_cost_inc_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "handling_cost_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "handling_cost_tax_class_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "base_wrapping_cost",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "wrapping_cost_ex_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "wrapping_cost_inc_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "wrapping_cost_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "wrapping_cost_tax_class_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "total_ex_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "total_inc_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "total_tax",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "items_total",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "items_shipped",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "payment_method",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "payment_provider_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "payment_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "refunded_amount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "order_is_digital",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "store_credit_amount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "gift_certificate_amount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "ip_address",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "geoip_country",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "geoip_country_iso2",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "currency_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "currency_code",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "currency_exchange_rate",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "default_currency_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "default_currency_code",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "staff_notes",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "customer_message",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "discount_amount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "coupon_discount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_address_count",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_deleted",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "ebay_order_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "cart_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "billing_address",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "first_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "last_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "company",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "street_1",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "street_2",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "city",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "state",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "zip",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "country",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "country_iso2",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "phone",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "email",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "mode": "REPEATED",
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "is_email_opt_in",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "credit_card_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "order_source",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "channel_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "external_source",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "products",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "resource",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "mode": "REPEATED",
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_addresses",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "resource",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "mode": "REPEATED",
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "coupons",
+            "type": "RECORD",
+            "mode":"REPEATED",
+
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "resource",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ]
+          },
+          {
+            "name": "external_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "external_merchant_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "tax_provider_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "custom_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "customers",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "company",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "form_fields",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_created",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_modified",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "store_credit",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "registration_ip_address",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "customer_group_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "notes",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "tax_exempt_category",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "reset_pass_on_login",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "accepts_marketing",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "addresses",
+            "type": "RECORD",
+            "mode":"REPEATED",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "resource",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "subscribers",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "company",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "form_fields",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_created",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_modified",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "store_credit",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "registration_ip_address",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "customer_group_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "notes",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "tax_exempt_category",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "reset_pass_on_login",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "accepts_marketing",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "addresses",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "resource",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "mode": "REPEATED",
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "pricelists",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "name",
+            "type": "STRING"
+          },
+          {
+            "name": "date_created",
+            "type": "TIMESTAMP"
+          },
+          {
+            "name": "date_modified",
+            "type": "TIMESTAMP"
+          },
+          {
+            "name": "active",
+            "type": "BOOLEAN"
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "banners",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "content",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "page",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "item_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "location",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_created",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_from",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_to",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "visible",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      },
+      {
+        "name": "coupons",
+        "columns": [
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "amount",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "min_purchase",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "expires",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "enabled",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "code",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "applies_to",
+            "type": "RECORD",
+            "fields": [
+              {
+                "name": "entity",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              },
+              {
+                "name": "ids",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "fields": [
+
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true,
+                "modificationType": "NONE",
+                "exclusionFields": [
+
+                ]
+              }
+            ],
+            "mode": "REPEATED",
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "num_uses",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "max_uses",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "max_uses_per_customer",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "shipping_methods",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          },
+          {
+            "name": "date_created",
+            "type": "TIMESTAMP",
+            "mode": "NULLABLE",
+            "fields": [
+
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true,
+            "modificationType": "NONE",
+            "exclusionFields": [
+
+            ]
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "isFullLoadSupported": false,
+        "schema": "",
+        "selected": true
+      }
+    ]
+  }
+}

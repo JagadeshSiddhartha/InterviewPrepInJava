@@ -1,0 +1,4891 @@
+{
+  "token": {
+    "token": "1000.c16a0ac4c803cda3b6fa507f041de11f.0d075eb05dc6c9e763842ff1f9a7d8fc",
+    "expires": 0,
+    "machineId": ""
+  },
+  "accounts": [],
+  "tables": [
+    {
+      "name": "Campaigns",
+      "columns": [
+        {
+          "name": "Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Campaign_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "End_Date",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Num_sent",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Expected_Revenue",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Actual_Cost",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Expected_Response",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Parent_Campaign",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Start_Date",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Budgeted_Cost",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Leads",
+      "columns": [
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Company",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Email",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Rating",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Website",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Twitter",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Salutation",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Activity_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "First_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Full_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Lead_Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Industry",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Record_Image",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Skype_ID",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "converted",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Street",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Zip_Code",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Email_Opt_Out",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Designation",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "No_of_Employees",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mobile",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Lead_Source",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Fax",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Annual_Revenue",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Secondary_Email",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Accounts",
+      "columns": [
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Ownership",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Rating",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "SIC_Code",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Shipping_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Website",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Employees",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Activity_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Industry",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Record_Image",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Site",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billing_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Number",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Ticker_Symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billing_Street",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billing_Code",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Parent_Account",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Shipping_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Shipping_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Shipping_Code",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billing_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billing_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Fax",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Annual_Revenue",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Shipping_Street",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Contacts",
+      "columns": [
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Email",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Vendor_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mailing_Zip",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mailing_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Twitter",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_Zip",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mailing_Street",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Salutation",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Activity_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "First_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Full_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Asst_Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Record_Image",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Department",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Skype_ID",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Assistant",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mailing_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Email_Opt_Out",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Reporting_To",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Date_of_Birth",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mailing_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Title",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Other_Street",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Mobile",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Home_Phone",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Lead_Source",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Fax",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Secondary_Email",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Deals",
+      "columns": [
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Campaign_Source",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "followers",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Closing_Date",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Last_Activity_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Lead_Conversion_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Deal_Name",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Expected_Revenue",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Overall_Sales_Duration",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Stage",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Account_Name",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Amount",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "followed",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Probability",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Next_Step",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Contact_Name",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Sales_Cycle_Duration",
+          "type": "NUMERIC",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Lead_Source",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Tasks",
+      "columns": [
+        {
+          "name": "Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Due_Date",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Priority",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Closed_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Subject",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Send_Notification_Email",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "se_module",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Recurring_Activity",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "What_Id",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Remind_At",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Who_Id",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Events",
+      "columns": [
+        {
+          "name": "All_day",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Address",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Start_DateTime",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Latitude",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Participants",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Event_Title",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "calendar_booking_event",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "End_DateTime",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_By",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Comment",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Remind_At",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Who_Id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Venue",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "ZIP_Code",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "recurrence_id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Longitude",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "se_module",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Recurring_Activity",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "What_Id",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Sub_Locality",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "u_id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "send_notification",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Calls",
+      "columns": [
+        {
+          "name": "Call_Duration",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "calendar_booking_call",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Purpose",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Who_Id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Reminder",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Start_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Subject",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "se_module",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Result",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "What_Id",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Duration_in_seconds",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    },
+    {
+      "name": "Activities",
+      "columns": [
+        {
+          "name": "All_day",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_State",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Owner",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "currency_symbol",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Latitude",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Participants",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "process_flow",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_City",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Purpose",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Comment",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approved",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Who_Id",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "approval",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "delegate",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "approve",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "reject",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "resubmit",
+              "type": "BOOLEAN",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Venue",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "ZIP_Code",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Activity_Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Priority",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Start_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "editable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Longitude",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Result",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Recurring_Activity",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "What_Id",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Created_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Duration",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Address",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Description",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Closed_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Start_DateTime",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "End_DateTime",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_By",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_By",
+          "type": "RECORD",
+          "mode": "REPEATED",
+          "fields": [
+            {
+              "name": "name",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            },
+            {
+              "name": "id",
+              "type": "STRING",
+              "mode": "NULLABLE",
+              "fields": [],
+              "primary": false,
+              "lastRecord": false,
+              "selected": true,
+              "modificationType": "NONE",
+              "exclusionFields": []
+            }
+          ],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Status",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Country",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Modified_Time",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Reminder",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Due_Date",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Billable",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Subject",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "se_module",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Type",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Check_In_Sub_Locality",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Call_Duration_in_seconds",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        },
+        {
+          "name": "Tag",
+          "type": "STRING",
+          "mode": "NULLABLE",
+          "fields": [],
+          "primary": false,
+          "lastRecord": false,
+          "selected": true,
+          "modificationType": "NONE",
+          "exclusionFields": []
+        }
+      ],
+      "storage": {
+        "basePath": "",
+        "blobPath": ""
+      },
+      "schema": "",
+      "selected": true,
+      "pivotColumn": null,
+      "modificationType": "NONE"
+    }
+  ],
+  "props": {},
+  "version": 2
+}
