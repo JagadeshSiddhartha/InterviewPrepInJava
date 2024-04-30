@@ -1,4 +1,4 @@
-package Graph;
+package Graphs;
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ public class GraphBasics {
         }
     }
 
-    static void topologicalSort(int v, ArrayList<ArrayList<Integer>> list) {
+    static void topologicalSort(int v, ArrayList<ArrayList<Integer>> list)  {
         int[] indeggree = new int[v];
         for(int i=0;i<list.size();i++) {
             for(int node : list.get(i)) {
@@ -69,7 +69,6 @@ public class GraphBasics {
         for(int i:order) {
             System.out.print( i + " ");
         }
-
     }
 
     static boolean isCyclicInDirected(ArrayList<ArrayList<Integer>> list, int v) {
@@ -135,7 +134,7 @@ public class GraphBasics {
         {
             ArrayList<ArrayList<Integer>> list = new ArrayList<>();
             int nov = sc.nextInt();
-            int edg  =sc.nextInt();
+            int edg = sc.nextInt();
             for(int i = 0; i < nov; i++)
                 list.add(i, new ArrayList<Integer>());
 
@@ -149,7 +148,8 @@ public class GraphBasics {
             for(int i = 0; i < nov; i++)
                 vis[i] = false;
             bfs(0, list, vis);
-            System.out.println();
+            System.out.println(11);
+            System.out.println(11);
         }
     }
 }

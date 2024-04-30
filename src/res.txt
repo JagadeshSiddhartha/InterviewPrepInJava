@@ -1,0 +1,6 @@
+va.lang.RuntimeException: Exception in getting data of table surveys okhttp3.ResponseBody$1@40afbe21
+java.lang.RuntimeException: Exception in getting data of table surveys okhttp3.ResponseBody$1@2b2bb8af
+java.lang.RuntimeException: Exception in getting data of table surveys okhttp3.ResponseBody$1@46e98bee
+java.lang.RuntimeException: Exception in getting data of table surveys okhttp3.ResponseBody$1@60d1bfda
+"java.util.concurrent.CompletionException: java.sql.SQLException: ORA-20003: Reject limit reached, query table ""KRISHNA"".""COPY$1317_LOG"" for error details\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 542\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 1040\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 1063\nORA-06512: at line 1\n"
+"java.util.concurrent.CompletionException: java.sql.SQLException: ORA-20003: Reject limit reached, query table ""KRISHNA"".""COPY$6018_LOG"" for error details\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 543\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 1041\nORA-06512: at ""C##CLOUD$SERVICE.DBMS_CLOUD"", line 1064\nORA-06512: at line 1\n"

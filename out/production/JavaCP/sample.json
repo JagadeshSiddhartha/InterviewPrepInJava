@@ -1,0 +1,5583 @@
+{
+  "version": 2,
+  "preAuthSteps": [
+    {
+      "header": "<div class='step-header-main'>Setup Facebook Ads Integration</div><div class='step-header-sub'>Refer to our <a href=\"https://www.sarasanalytics.com/docs/sources/facebook-ads\">documentation</a> for setup instructions</div>",
+      "type": "STATIC",
+      "attributes": [
+        {
+          "label": "Fill in the below details to establish connection between Facebook Ads and Warehouse for data replication",
+          "type": "INFO"
+        },
+        {
+          "label": "Integration Name",
+          "name": "integrationName",
+          "type": "TEXT",
+          "required": true,
+          "maxLength": 50,
+          "value": "",
+          "possibleValues": [],
+          "autoCompleteUrl": "",
+          "help": "Enter the integration name. Daton will use this name to create tables in the warehouse. Once selected, this name cannot be changed.",
+          "description": ""
+        },
+        {
+          "label": "Frequency",
+          "name": "frequency",
+          "type": "INTEGER",
+          "required": true,
+          "maxLength": 50,
+          "value": "2",
+          "min": 1,
+          "max": 24,
+          "possibleValues": [],
+          "autoCompleteUrl": "",
+          "help": "Select the frequency in hours with which you'd like Daton to pull data from this source.",
+          "description": "Hours"
+        },
+        {
+          "label": "History",
+          "name": "history",
+          "type": "INTEGER",
+          "required": true,
+          "maxLength": 50,
+          "value": "1",
+          "min": 0,
+          "max": 10,
+          "possibleValues": [],
+          "autoCompleteUrl": "",
+          "help": "Select the number of years of historical data you'd like Daton to pull into your data warehouse.",
+          "description": "Years"
+        },
+        {
+          "label": "Attribution Window",
+          "name": "attributionWindow",
+          "type": "DROPDOWN",
+          "required": true,
+          "maxLength": 50,
+          "value": "",
+          "min": 0,
+          "max": 0,
+          "possibleValues": [
+            {
+              "value": 1,
+              "group": 1,
+              "selected": false,
+              "exclusionFields": []
+            },
+            {
+              "value": 7,
+              "group": 7,
+              "selected": false,
+              "exclusionFields": []
+            },
+            {
+              "value": 28,
+              "group": 28,
+              "selected": false,
+              "exclusionFields": []
+            }
+          ],
+          "childAttribute": [],
+          "autoCompleteUrl": "",
+          "help": "Select the attribution window you'd like Daton to pull into your data warehouse.",
+          "description": "days",
+          "showSelectAll": true,
+          "pivot": false
+        }
+      ]
+    }
+  ],
+  "postAuthSteps": [
+    {
+      "header": "<div class='step-header-main'>Select Facebook Ads Account(s)</div><div class='step-header-sub'>Refer to our <a href=\"https://www.sarasanalytics.com/docs/sources/facebook-ads\">documentation</a> for setup instructions</div>",
+      "type": "DYNAMIC",
+      "description": "Test description added by Krishna"
+    },
+    {
+      "header": "<div class='step-header-main'>Configure Facebook Ads Tables</div><div class='step-header-sub'>Refer to our <a href=\"https://www.sarasanalytics.com/docs/sources/facebook-ads\">documentation</a> for setup instructions</div>",
+      "type": "DYNAMIC"
+    },
+    {
+      "header": "<div class='step-header-main'>Configure Facebook Ads Fields</div><div class='step-header-sub'>Refer to our <a href=\"https://www.sarasanalytics.com/docs/sources/facebook-ads\">documentation</a> for setup instructions</div>",
+      "type": "DYNAMIC"
+    }
+  ],
+  "extraConfig": {
+    "tables": [
+      {
+        "name": "adinsights",
+        "columns": [
+          {
+            "name": "account_currency",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "action_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "canvas_avg_view_percent",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_start",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_stop",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recall_rate",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "social_spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_click_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "website_ctr",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "adinsights_breakdown_country",
+        "columns": [
+          {
+            "name": "account_currency",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "action_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "canvas_avg_view_percent",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_start",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_stop",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recall_rate",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "social_spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_click_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "website_ctr",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "adinsights_breakdown_region",
+        "columns": [
+          {
+            "name": "account_currency",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "action_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "canvas_avg_view_percent",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_start",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_stop",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recall_rate",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "social_spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_click_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "website_ctr",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "adinsights_breakdown_gender",
+        "columns": [
+          {
+            "name": "account_currency",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "action_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "canvas_avg_view_percent",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_start",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_stop",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recall_rate",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "social_spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_click_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "website_ctr",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "adinsights_breakdown_device_platform",
+        "columns": [
+          {
+            "name": "account_currency",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "action_values",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ad_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "canvas_avg_view_percent",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_inline_link_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_start",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "date_stop",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recall_rate",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "estimated_ad_recallers",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "inline_post_engagement",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "social_spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_click_ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_inline_link_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "website_ctr",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_event_channel",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_link_click_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_location_code",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_asset_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "campaigns",
+        "columns": [
+          {
+            "name": "id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adlabels",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "created_time",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "updated_time",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "objective",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "effective_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "buying_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend_cap",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "start_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "updated_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "ads",
+        "columns": [
+          {
+            "name": "id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adlabels",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "account",
+                "type": "RECORD",
+                "mode": "REPEATED",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "STRING",
+                    "mode": "NULLABLE",
+                    "fields": [],
+                    "primary": false,
+                    "lastRecord": false,
+                    "selected": true
+                  },
+                  {
+                    "name": "account_id",
+                    "type": "STRING",
+                    "mode": "NULLABLE",
+                    "fields": [],
+                    "primary": false,
+                    "lastRecord": false,
+                    "selected": true
+                  },
+                  {
+                    "name": "account_status",
+                    "type": "NUMERIC",
+                    "mode": "NULLABLE",
+                    "fields": [],
+                    "primary": false,
+                    "lastRecord": false,
+                    "selected": true
+                  }
+                ],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "created_time",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "updated_time",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "adset_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "bid_amount",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "configured_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "created_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "source_ad_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "creative",
+            "type": "RECORD",
+            "mode": "NULLABLE",
+            "fields": [
+              {
+                "name": "body",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "image_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "account_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "actor_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "applink_treatment",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "call_to_action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "effective_instagram_story_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "effective_object_story_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "title",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "instagram_permalink_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "instagram_story_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "link_og_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "object_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "object_story_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "object_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "object_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "product_set_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "status",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "template_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "thumbnail_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "image_hash",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "url_tags",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "video_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "link_url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      },
+      {
+        "name": "adSets",
+        "columns": [
+          {
+            "name": "account_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "app_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "attribution_window_days",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "billing_event",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "budget_remaining",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "campaign_id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "configured_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "created_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "daily_budget",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "effective_status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "end_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "id",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "lifetime_budget",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "lifetime_imps",
+            "type": "INTEGER",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "optimization_goal",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "recurring_budget_semantics",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "rtb_flag",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "start_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "updated_time",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "use_new_app_click",
+            "type": "BOOLEAN",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "schema": "",
+        "selected": true,
+        "pivotColumn": null,
+        "modificationType": "UPDATED"
+      },
+      {
+        "name": "adcreatives",
+        "columns": [
+          {
+            "name": "body",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "image_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "account_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "actor_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "applink_treatment",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "call_to_action_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "effective_instagram_story_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "effective_object_story_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "title",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "instagram_permalink_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "instagram_story_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "link_og_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "object_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "object_story_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "object_type",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "object_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "product_set_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "status",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "template_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "thumbnail_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "image_hash",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "url_tags",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "video_id",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "link_url",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ],
+        "storage": {
+          "basePath": "",
+          "blobPath": ""
+        },
+        "schema": "",
+        "selected": true,
+        "modificationType": "UPDATED",
+        "pivotColumn": null
+      },
+      {
+        "name": "adkeywordstats",
+        "columns": [
+          {
+            "name": "id",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "actions",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_total_action",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cost_per_unique_click",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpc",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpm",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "cpp",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "ctr",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "frequency",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "impressions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "name",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "reach",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "spend",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "total_actions",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "total_unique_actions",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_actions",
+            "type": "RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name": "1d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "1d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "28d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_click",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "7d_view",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_canvas_component_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_carousel_card_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_destination",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_device",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_reaction",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_target_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_sound",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "action_video_type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "inline",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              },
+              {
+                "name": "value",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "fields": [],
+                "primary": false,
+                "lastRecord": false,
+                "selected": true
+              }
+            ],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_clicks",
+            "type": "NUMERIC",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_ctr",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          },
+          {
+            "name": "unique_impressions",
+            "type": "STRING",
+            "mode": "NULLABLE",
+            "fields": [],
+            "primary": false,
+            "lastRecord": false,
+            "selected": true
+          }
+        ]
+      }
+    ]
+  }
+}
